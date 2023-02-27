@@ -1,28 +1,8 @@
-import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
-export const footerImageProps = graphql`
-  fragment footerImageProps on File {
-    childImageSharp {
-      gatsbyImageData(
-        layout: FIXED
-        width: 88
-        quality: 90
-      )
-    }
-  }
-`
+import React from "react";
+import { graphql, useStaticQuery, Link } from "gatsby";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 
 const Footer = (props) => {
-  const { footerImage } = useStaticQuery(graphql`
-    query footerImageQuery {
-      footerImage: file(relativePath: { regex: "/footer-binoculars/" }) {
-        ...footerImageProps
-      }
-    }
-  `)
-
   return (
     <div id="footer">
       <div className="content row">
@@ -63,10 +43,11 @@ const Footer = (props) => {
         </div>
 
         <div className="col">
-          <GatsbyImage
+          <StaticImage
             className="binoculars"
-            image={getImage(footerImage)}
+            src="../assets/illustrations/footer-binoculars.png"
             alt="peeping computer"
+            width={88}
           />
           <p className="nerd-text">
             If you're a bit of a technical nerd (like us!) you can keep on
@@ -78,7 +59,7 @@ const Footer = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
