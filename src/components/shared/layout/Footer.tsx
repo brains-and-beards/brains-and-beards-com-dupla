@@ -1,6 +1,6 @@
 import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = (props) => {
   return (
@@ -45,7 +45,7 @@ const Footer = (props) => {
         <div className="col">
           <StaticImage
             className="binoculars"
-            src="../assets/illustrations/footer-binoculars.png"
+            src="../../../assets/illustrations/footer-binoculars.png"
             alt="peeping computer"
             width={88}
           />

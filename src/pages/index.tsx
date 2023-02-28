@@ -13,7 +13,7 @@ import RotatingBadge from "../assets/illustrations/also-in.svg";
 import RNBadge from "../assets/illustrations/rn.svg";
 import useRandomHeroImage from "../components/Homepage/useRandomHeroImage";
 import SharooCaseStudyBar from "../components/shared/Bars/SharooCaseStudyBar";
-// import SEO from "../components/SEO";
+import SEO from "../components/shared/layout/SEO";
 
 // TODO: Remove once it's not used (on service pages)
 export const _imageProps = graphql`
@@ -165,4 +165,4 @@ const MainPage = (props) => {
 
 export default MainPage;
 
-// export const Head = ({ location }) => <SEO pathname={location.pathname} />;
+export const Head = ({ location }) => <SEO pathname={location.pathname} />;

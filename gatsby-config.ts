@@ -2,8 +2,17 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Brains & Beards site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "Home",
+    titleTemplate: "%s · Brains & Beards",
+    description:
+      "Brains & Beards is an unpretentious mobile studio that solves business problems through a mix of design and technology.",
+    siteUrl: "https://brainsandbeards.com",
+    url: "https://brainsandbeards.com",
+    // No trailing slash allowed!
+    image: "favicon.png",
+    // Path to your image you placed in the 'static' folder
+    twitterUsername: "@brainsandbeards",
+    blogPostsCountPerPage: 12,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -14,7 +23,14 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          placeholder: "blurred",
+        },
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-netlify",
     {
