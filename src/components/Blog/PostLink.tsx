@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const PostLink = ({ post, showExcerpt, isFirst }) => {
   const {
-    frontmatter: { author, path, title, date, image, imagePosition },
+    frontmatter: { author, path, title, date, image },
     firstItemFrontmatter,
     excerpt,
   } = post;

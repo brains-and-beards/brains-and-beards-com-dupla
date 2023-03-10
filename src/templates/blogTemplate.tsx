@@ -50,7 +50,7 @@ export const query = graphql`
           author
           path
           title
-          date
+          date(formatString: "MMMM DD, YYYY")
           image {
             childImageSharp {
               gatsbyImageData(
@@ -74,7 +74,6 @@ const BlogTemplate = ({
     id,
     frontmatter: {
       title,
-      path,
       date,
       image,
       author,
@@ -113,7 +112,7 @@ const BlogTemplate = ({
           <HiringFootnote />
           <AuthorWithPictureAndText author={author} text={"WRITTEN BY"} />
         </div>
-        {/* <Newsletter /> */}
+        <Newsletter />
         <div className="narrow-column">
           <section>
             <h3>More Brains and Beards stories</h3>
